@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5fa">
+  <title>My Portfolio | Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-page" id="loginPage">
+    <div class="login-card">
+      <div class="logo">MP</div>
+      <h1>Welcome Back</h1>
+      <p>Sign in to My Portfolio Admin</p>
+
+      <form id="loginForm">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Admin email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button type="submit" id="loginBtn">Sign In</button>
+        <p id="loginMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <main id="dashboard" class="dashboard hidden">
+    <header class="topbar">
+      <div>
+        <h2>My Portfolio</h2>
+        <p>Admin Dashboard</p>
+      </div>
+      <button id="logoutBtn" class="logout">Logout</button>
+    </header>
+
+    <section class="welcome">
+      <h1>Manage Your Apps</h1>
+      <p>Add apps, update versions and manage your portfolio.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Apps</span>
+        <h2 id="totalApps">0</h2>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="formTitle">Add New App</h2>
+
+      <form id="appForm">
+        <input type="hidden" id="appId">
+
+        <label>App Name</label>
+        <input type="text" id="appName" placeholder="Example: Hishab Hobe" required>
+
+        <label>App Description</label>
+        <textarea id="appDescription" placeholder="Write app description" required></textarea>
+
+        <label>Package Name</label>
+        <input type="text" id="packageName" placeholder="com.example.app" required>
+
+        <label>App Icon URL</label>
+        <input type="url" id="iconUrl" placeholder="https://example.com/icon.png" required>
+
+        <label>Latest Version Name</label>
+        <input type="text" id="versionName" placeholder="1.0.0" required>
+
+        <label>Version Code</label>
+        <input type="number" id="versionCode" placeholder="1" min="1" required>
+
+        <label>GitHub Release APK URL</label>
+        <input type="url" id="apkUrl" placeholder="https://github.com/..." required>
+
+        <label>What's New</label>
+        <textarea id="whatsNew" placeholder="What's new in this version?"></textarea>
+
+        <button type="submit" id="saveBtn">Publish App</button>
+        <button type="button" id="cancelEdit" class="cancel hidden">Cancel Edit</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Your Apps</h2>
+      <div id="appList" class="app-list">
+        <p>Loading apps...</p>
+      </div>
+    </section>
+
+    <footer>© 2026 My Portfolio Admin</footer>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
